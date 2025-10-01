@@ -2,130 +2,139 @@
   "movies": [
     {
       "id": 1,
-      "title": "Cadena perpetua",
-      "genre": "Drama",
-      "year": 1994,
-      "rating": 9.3,
-      "image": "https://image.tmdb.org/t/p/w500/uMyRJzPFF Pau3CLh3wpsUeYfTva.jpg"
+      "title": "El padrino",
+      "genre": "Crimen, Drama",
+      "description": "La historia de una poderosa familia mafiosa en Nueva York dirigida por Don Vito Corleone.",
+      "year": 1972,
+      "rating": 9.0,
+      "image_url": "https://pics.filmaffinity.com/the_godfather-488102675-large.jpg"
     },
     {
       "id": 2,
-      "title": "El padrino",
-      "genre": "Crimen",
-      "year": 1972,
-      "rating": 9.2,
-      "image": "https://image.tmdb.org/t/p/w500/5gUkls0s69xa3qI208iE2h1xPTh.jpg"
+      "title": "El padrino. Parte II",
+      "genre": "Crimen, Drama",
+      "description": "La continuación de la saga de la familia Corleone, explorando su ascenso al poder.",
+      "year": 1974,
+      "rating": 8.9,
+      "image_url": "https://pics.filmaffinity.com/the_godfather_part_ii-617194725-large.jpg"
     },
     {
       "id": 3,
-      "title": "El caballero oscuro",
-      "genre": "Acción",
-      "year": 2008,
-      "rating": 9.0,
-      "image": "https://image.tmdb.org/t/p/w500/8QDQExnfNFO3sP0e2HP312TLaV1.jpg"
+      "title": "Doce hombres sin piedad",
+      "genre": "Drama",
+      "description": "Un jurado debe decidir el destino de un joven acusado de asesinato.",
+      "year": 1957,
+      "rating": 8.7,
+      "image_url": "https://pics.filmaffinity.com/12_angry_men-122099105-large.jpg"
     },
     {
       "id": 4,
-      "title": "El padrino: Parte II",
-      "genre": "Crimen",
-      "year": 1974,
-      "rating": 9.0,
-      "image": "https://image.tmdb.org/t/p/w500/v3QyboPM4 F3h4JpwOcJm8aADhEI.jpg"
+      "title": "La lista de Schindler",
+      "genre": "Biografía, Drama, Bélico",
+      "description": "La historia real de Oskar Schindler, quien salvó a más de mil judíos durante el Holocausto.",
+      "year": 1993,
+      "rating": 8.6,
+      "image_url": "https://pics.filmaffinity.com/schindler_s_list-473662617-large.jpg"
     },
     {
       "id": 5,
-      "title": "12 hombres sin piedad",
-      "genre": "Drama",
+      "title": "Testigo de cargo",
+      "genre": "Crimen, Drama, Misterio",
+      "description": "Un hombre es acusado de asesinato y su esposa lo defiende en el juicio.",
       "year": 1957,
-      "rating": 8.9,
-      "image": "https://image.tmdb.org/t/p/w500/L1Erf26i3CopunsS2Pj5g3A6w2.jpg"
+      "rating": 8.6,
+      "image_url": "https://pics.filmaffinity.com/witness_for_the_prosecution-236651370-large.jpg"
     },
     {
       "id": 6,
-      "title": "La lista de Schindler",
-      "genre": "Historia",
-      "year": 1993,
-      "rating": 8.9,
-      "image": "https://image.tmdb.org/t/p/w500/52SvkTdm82ia2nJGKxgrVbWUSa.jpg"
+      "title": "Luces de la ciudad",
+      "genre": "Comedia, Drama, Romance",
+      "description": "Un vagabundo se enamora de una florista ciega y trata de ayudarla.",
+      "year": 1931,
+      "rating": 8.6,
+      "image_url": "https://pics.filmaffinity.com/city_lights-825971402-large.jpg"
     },
     {
       "id": 7,
-      "title": "El señor de los anillos: El retorno del rey",
-      "genre": "Fantasía",
-      "year": 2003,
-      "rating": 8.9,
-      "image": "https://image.tmdb.org/t/p/w500/3mbD95Lu2sagN02xk2w2jVvTf80.jpg"
+      "title": "El mago de Oz",
+      "genre": "Aventura, Familia, Fantasía",
+      "description": "Una joven es transportada a un mundo mágico donde busca al Mago de Oz para regresar a casa.",
+      "year": 1939,
+      "rating": 8.5,
+      "image_url": "https://pics.filmaffinity.com/the_wizard_of_oz-385351250-large.jpg"
     },
     {
       "id": 8,
-      "title": "Pulp Fiction",
-      "genre": "Crimen",
-      "year": 1994,
-      "rating": 8.8,
-      "image": "https://image.tmdb.org/t/p/w500/5QAmkPdxIPljt5pQkPz22pXyHAb.jpg"
+      "title": "Ciudadano Kane",
+      "genre": "Drama, Misterio",
+      "description": "La vida y carrera de un magnate de la prensa estadounidense.",
+      "year": 1941,
+      "rating": 8.5,
+      "image_url": "https://pics.filmaffinity.com/citizen_kane-217208961-large.jpg"
     },
     {
       "id": 9,
-      "title": "Forrest Gump",
-      "genre": "Comedia",
-      "year": 1994,
-      "rating": 8.8,
-      "image": "https://image.tmdb.org/t/p/w500/hd3tYn3GwszPEs8jD45iT231WwB.jpg"
+      "title": "El tercer hombre",
+      "genre": "Crimen, Drama, Misterio",
+      "description": "Un escritor investiga la muerte de su amigo en la Viena de la posguerra.",
+      "year": 1949,
+      "rating": 8.5,
+      "image_url": "https://pics.filmaffinity.com/the_third_man-366260443-large.jpg"
     },
     {
       "id": 10,
-      "title": "El club de la lucha",
-      "genre": "Drama",
-      "year": 1999,
-      "rating": 8.8,
-      "image": "https://image.tmdb.org/t/p/w500/vHkLh2Qo7Ie2j03y2b2QzCqgXIS.jpg"
+      "title": "Déjame entrar",
+      "genre": "Drama, Terror, Romance",
+      "description": "Un niño solitario forma una amistad con una niña que resulta ser un vampiro.",
+      "year": 2008,
+      "rating": 8.5,
+      "image_url": "https://pics.filmaffinity.com/lat_den_ratte_komma_in_let_the_right_one_in-361591202-large.jpg"
     },
     {
       "id": 11,
-      "title": "Origen",
-      "genre": "Ciencia ficción",
-      "year": 2010,
-      "rating": 8.7,
-      "image": "https://image.tmdb.org/t/p/w500/k52oN2a5Wb9pQd2I25s6sL5gwsW.jpg"
+      "title": "La vida es bella",
+      "genre": "Comedia, Drama, Bélico",
+      "description": "Un hombre utiliza su imaginación para proteger a su hijo de los horrores del Holocausto.",
+      "year": 1997,
+      "rating": 8.5,
+      "image_url": "https://pics.filmaffinity.com/la_vita_e_bella-646167341-large.jpg"
     },
     {
       "id": 12,
-      "title": "Matrix",
-      "genre": "Ciencia ficción",
-      "year": 1999,
-      "rating": 8.7,
-      "image": "https://image.tmdb.org/t/p/w500/f89U3ADr1oiB1s9Gz0gSbn0QZAb.jpg"
+      "title": "El viaje de Chihiro",
+      "genre": "Animación, Aventura, Familia",
+      "description": "Una niña se encuentra en un mundo mágico y debe encontrar una forma de regresar a casa.",
+      "year": 2001,
+      "rating": 8.5,
+      "image_url": "https://pics.filmaffinity.com/sen_to_chihiro_no_kamikakushi-348587850-large.jpg"
     },
     {
       "id": 13,
-      "title": "Uno de los nuestros",
-      "genre": "Crimen",
-      "year": 1990,
-      "rating": 8.7,
-      "image": "https://image.tmdb.org/t/p/w500/v4QfBDXA51n1bxK1n7mXbhd1h9b.jpg"
+      "title": "La naranja mecánica",
+      "genre": "Crimen, Drama, Ciencia ficción",
+      "description": "Un joven lidera una banda de delincuentes en una sociedad futurista.",
+      "year": 1971,
+      "rating": 8.5,
+      "image_url": "https://pics.filmaffinity.com/a_clockwork_orange-964766200-large.jpg"
     },
     {
       "id": 14,
-      "title": "Seven",
-      "genre": "Misterio",
-      "year": 1995,
-      "rating": 8.6,
-      "image": "https://image.tmdb.org/t/p/w500/6y7jppKdUdLQj39p0Q8kG0H7L4q.jpg"
+      "title": "El séptimo sello",
+      "genre": "Drama, Fantasía",
+      "description": "Un caballero juega una partida de ajedrez con la Muerte durante la peste negra.",
+      "year": 1957,
+      "rating": 8.5,
+      "image_url": "https://pics.filmaffinity.com/det_sjunde_inseglet_the_seventh_seal-346040626-large.jpg"
     },
     {
       "id": 15,
-      "title": "El silencio de los corderos",
-      "genre": "Suspense",
-      "year": 1991,
-      "rating": 8.6,
-      "image": "https://image.tmdb.org/t/p/w500/7acLSyq7AN1uT0gj7yX1t5lCefG.jpg"
-    }
-  ],
-  "users": [
-    {
-      "id": 1,
-      "username": "admin",
-      "password": "1234"
+      "title": "El club de la lucha",
+      "genre": "Drama",
+      "description": "Un hombre insomne forma una sociedad secreta de lucha con un vendedor de jabón.",
+      "year": 1999,
+      "rating": 8.5,
+      "image_url": "https://pics.filmaffinity.com/fight_club-320750671-large.jpg"
     }
   ]
+
 }

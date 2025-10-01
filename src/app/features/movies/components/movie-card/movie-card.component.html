@@ -1,0 +1,9 @@
+<div class="bg-white shadow-lg rounded-lg overflow-hidden hover:scale-105 transition cursor-pointer">
+  <img [src]="movie.image_url" [alt]="movie.title" class="w-full h-64 object-cover" />
+  <div class="p-4">
+    <h2 class="text-xl font-bold truncate">{{ movie.title }}</h2>
+    <p class="text-gray-600">{{ movie.genre }} • {{ movie.year }}</p>
+    <p class="text-yellow-600 font-semibold">⭐ {{ movie.rating }}</p>
+    <p class="text-gray-600 font-semibold">{{ movie.description }}</p>
+  </div>
+</div>

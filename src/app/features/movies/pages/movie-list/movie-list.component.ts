@@ -1,12 +1,22 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
+import { CommonModule } from '@angular/common';
+
+import { MovieCardComponent } from '../../components/movie-card/movie-card.component';
+import {Movie} from "../../../../core/models/movie.model";
+import {MovieService} from "../../../../core/services/movie.service";
 
 @Component({
   selector: 'app-movie-list',
   standalone: true,
-  imports: [],
+  imports: [CommonModule, MovieCardComponent],
   templateUrl: './movie-list.component.html',
-  styleUrl: './movie-list.component.css'
+  styleUrls: ['./movie-list.component.css']
 })
-export class MovieListComponent {
+export class MovieListComponent implements OnInit {
+  movies: Movie[] = [];
+  private movieService = inject(MovieService);
 
+  ngOnInit() {
+    this.movieService.getMovies().subscribe(data => this.movies = data);
+  }
 }

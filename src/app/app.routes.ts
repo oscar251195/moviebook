@@ -4,7 +4,7 @@ export const routes: Routes = [
   {
     path: 'movies',
     loadChildren: () =>
-      import('./features/movies/movies.module').then(m => m.MoviesModule)
+      import('./features/movies/movies.routes').then(r => r.MOVIES_ROUTES)
   },
   {
     path: 'auth',
