@@ -1,0 +1,415 @@
+{
+  "movies": [
+    {
+      "id": 1,
+      "title": "Cadena perpetua",
+      "genre": "Drama",
+      "year": 1994,
+      "rating": 9.3,
+      "image": "https://image.tmdb.org/t/p/w500/uMyRJzPFF Pau3CLh3wpsUeYfTva.jpg"
+    },
+    {
+      "id": 2,
+      "title": "El padrino",
+      "genre": "Crimen",
+      "year": 1972,
+      "rating": 9.2,
+      "image": "https://image.tmdb.org/t/p/w500/5gUkls0s69xa3qI208iE2h1xPTh.jpg"
+    },
+    {
+      "id": 3,
+      "title": "El caballero oscuro",
+      "genre": "Acción",
+      "year": 2008,
+      "rating": 9.0,
+      "image": "https://image.tmdb.org/t/p/w500/8QDQExnfNFO3sP0e2HP312TLaV1.jpg"
+    },
+    {
+      "id": 4,
+      "title": "El padrino: Parte II",
+      "genre": "Crimen",
+      "year": 1974,
+      "rating": 9.0,
+      "image": "https://image.tmdb.org/t/p/w500/v3QyboPM4 F3h4JpwOcJm8aADhEI.jpg"
+    },
+    {
+      "id": 5,
+      "title": "12 hombres sin piedad",
+      "genre": "Drama",
+      "year": 1957,
+      "rating": 8.9,
+      "image": "https://image.tmdb.org/t/p/w500/L1Erf26i3CopunsS2Pj5g3A6w2.jpg"
+    },
+    {
+      "id": 6,
+      "title": "La lista de Schindler",
+      "genre": "Historia",
+      "year": 1993,
+      "rating": 8.9,
+      "image": "https://image.tmdb.org/t/p/w500/52SvkTdm82ia2nJGKxgrVbWUSa.jpg"
+    },
+    {
+      "id": 7,
+      "title": "El señor de los anillos: El retorno del rey",
+      "genre": "Fantasía",
+      "year": 2003,
+      "rating": 8.9,
+      "image": "https://image.tmdb.org/t/p/w500/3mbD95Lu2sagN02xk2w2jVvTf80.jpg"
+    },
+    {
+      "id": 8,
+      "title": "Pulp Fiction",
+      "genre": "Crimen",
+      "year": 1994,
+      "rating": 8.8,
+      "image": "https://image.tmdb.org/t/p/w500/5QAmkPdxIPljt5pQkPz22pXyHAb.jpg"
+    },
+    {
+      "id": 9,
+      "title": "Forrest Gump",
+      "genre": "Comedia",
+      "year": 1994,
+      "rating": 8.8,
+      "image": "https://image.tmdb.org/t/p/w500/hd3tYn3GwszPEs8jD45iT231WwB.jpg"
+    },
+    {
+      "id": 10,
+      "title": "El club de la lucha",
+      "genre": "Drama",
+      "year": 1999,
+      "rating": 8.8,
+      "image": "https://image.tmdb.org/t/p/w500/vHkLh2Qo7Ie2j03y2b2QzCqgXIS.jpg"
+    },
+    {
+      "id": 11,
+      "title": "Origen",
+      "genre": "Ciencia ficción",
+      "year": 2010,
+      "rating": 8.7,
+      "image": "https://image.tmdb.org/t/p/w500/k52oN2a5Wb9pQd2I25s6sL5gwsW.jpg"
+    },
+    {
+      "id": 12,
+      "title": "Matrix",
+      "genre": "Ciencia ficción",
+      "year": 1999,
+      "rating": 8.7,
+      "image": "https://image.tmdb.org/t/p/w500/f89U3ADr1oiB1s9Gz0gSbn0QZAb.jpg"
+    },
+    {
+      "id": 13,
+      "title": "Uno de los nuestros",
+      "genre": "Crimen",
+      "year": 1990,
+      "rating": 8.7,
+      "image": "https://image.tmdb.org/t/p/w500/v4QfBDXA51n1bxK1n7mXbhd1h9b.jpg"
+    },
+    {
+      "id": 14,
+      "title": "Seven",
+      "genre": "Misterio",
+      "year": 1995,
+      "rating": 8.6,
+      "image": "https://image.tmdb.org/t/p/w500/6y7jppKdUdLQj39p0Q8kG0H7L4q.jpg"
+    },
+    {
+      "id": 15,
+      "title": "El silencio de los corderos",
+      "genre": "Suspense",
+      "year": 1991,
+      "rating": 8.6,
+      "image": "https://image.tmdb.org/t/p/w500/7acLSyq7AN1uT0gj7yX1t5lCefG.jpg"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "username": "admin",
+      "password": "1234"
+    }
+  ]
+}
+
+//    },
+//    {
+//      "id": 16,
+//      "title": "Ciudad de Dios",
+//      "genre": "Drama",
+//      "year": 2002,
+//      "rating": 8.6,
+//      "image": "https://image.tmdb.org/t/p/w500/2h0FEG9g4KVdY6s45d2TNSthnFh.jpg"
+//    },
+//    {
+//      "id": 17,
+//      "title": "La vida es bella",
+//      "genre": "Comedia",
+//      "year": 1997,
+//      "rating": 8.6,
+//      "image": "https://image.tmdb.org/t/p/w500/74hLDKjD5aKharpraLQejv3rAbN.jpg"
+//    },
+//    {
+//      "id": 18,
+//      "title": "Star Wars: Episodio V - El Imperio contraataca",
+//      "genre": "Aventura",
+//      "year": 1980,
+//      "rating": 8.7,
+//      "image": "https://image.tmdb.org/t/p/w500/6u1fYtxG5ASgUHqgHfedj2n1o21.jpg"
+//    },
+//    {
+//      "id": 19,
+//      "title": "El viaje de Chihiro",
+//      "genre": "Animación",
+//      "year": 2001,
+//      "rating": 8.5,
+//      "image": "https://image.tmdb.org/t/p/w500/abK20VbWb7krVd2t23ggj0a861g.jpg"
+//    },
+//    {
+//      "id": 20,
+//      "title": "Parásitos",
+//      "genre": "Suspense",
+//      "year": 2019,
+//      "rating": 8.5,
+//      "image": "https://image.tmdb.org/t/p/w500/5QRi6c2W0f2sW4k1i5W2Vb5mcnB.jpg"
+//    },
+//    {
+//      "id": 21,
+//      "title": "Interstellar",
+//      "genre": "Ciencia ficción",
+//      "year": 2014,
+//      "rating": 8.6,
+//      "image": "https://image.tmdb.org/t/p/w500/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg"
+//    },
+//    {
+//      "id": 22,
+//      "title": "La milla verde",
+//      "genre": "Fantasía",
+//      "year": 1999,
+//      "rating": 8.6,
+//      "image": "https://image.tmdb.org/t/p/w500/2yBvYxGAof05yYFVnxaL1n5DGH.jpg"
+//    },
+//    {
+//      "id": 23,
+//      "title": "El pianista",
+//      "genre": "Guerra",
+//      "year": 2002,
+//      "rating": 8.5,
+//      "image": "https://image.tmdb.org/t/p/w500/ycr1Y51oX1jGM2t7xidY2S3brmn.jpg"
+//    },
+//    {
+//      "id": 24,
+//      "title": "Gladiator",
+//      "genre": "Acción",
+//      "year": 2000,
+//      "rating": 8.5,
+//      "image": "https://image.tmdb.org/t/p/w500/uY8W74Vd3L888LslkYt8PlDIDCi.jpg"
+//    },
+//    {
+//      "id": 25,
+//      "title": "El truco final (El prestigio)",
+//      "genre": "Misterio",
+//      "year": 2006,
+//      "rating": 8.5,
+//      "image": "https://image.tmdb.org/t/p/w500/t0fV15Pns1J3y27Gg323LSVdKj.jpg"
+//    },
+//    {
+//      "id": 26,
+//      "title": "Infiltrados",
+//      "genre": "Crimen",
+//      "year": 2006,
+//      "rating": 8.5,
+//      "image": "https://image.tmdb.org/t/p/w500/3k6bQ8gIsAis4sMEgKfpTDUu7X2.jpg"
+//    },
+//    {
+//      "id": 27,
+//      "title": "El rey león",
+//      "genre": "Animación",
+//      "year": 1994,
+//      "rating": 8.5,
+//      "image": "https://image.tmdb.org/t/p/w500/1CobbY3yV8TpjsfAZgO6wKAZyZ.jpg"
+//    },
+//    {
+//      "id": 28,
+//      "title": "Psicosis",
+//      "genre": "Terror",
+//      "year": 1960,
+//      "rating": 8.5,
+//      "image": "https://image.tmdb.org/t/p/w500/4n3cGlajD373t3v1v3aN3n6fBDe.jpg"
+//    },
+//    {
+//      "id": 29,
+//      "title": "Terminator 2: El juicio final",
+//      "genre": "Acción",
+//      "year": 1991,
+//      "rating": 8.5,
+//      "image": "https://image.tmdb.org/t/p/w500/vDCcrTr0nAAPEFyJkft7V0Mbrp.jpg"
+//    },
+//    {
+//      "id": 30,
+//      "title": "Whiplash",
+//      "genre": "Drama",
+//      "year": 2014,
+//      "rating": 8.5,
+//      "image": "https://image.tmdb.org/t/p/w500/fECdrGUM22g41NApOCBaOK12N6N.jpg"
+//    },
+//    {
+//      "id": 31,
+//      "title": "Alien, el octavo pasajero",
+//      "genre": "Terror",
+//      "year": 1979,
+//      "rating": 8.4,
+//      "image": "https://image.tmdb.org/t/p/w500/6s77J2G4tC1mCgK66qg3EaDpB5z.jpg"
+//    },
+//    {
+//      "id": 32,
+//      "title": "Apocalypse Now",
+//      "genre": "Guerra",
+//      "year": 1979,
+//      "rating": 8.4,
+//      "image": "https://image.tmdb.org/t/p/w500/gW3t3o4yS54klh8s53BFn53yXbV.jpg"
+//    },
+//    {
+//      "id": 33,
+//      "title": "Cinema Paradiso",
+//      "genre": "Drama",
+//      "year": 1988,
+//      "rating": 8.5,
+//      "image": "https://image.tmdb.org/t/p/w500/krcsbgTf93kVBkr22qfTs6N3a0I.jpg"
+//    },
+//    {
+//      "id": 34,
+//      "title": "Joker",
+//      "genre": "Drama",
+//      "year": 2019,
+//      "rating": 8.4,
+//      "image": "https://image.tmdb.org/t/p/w500/6Jdl0Y248s4XnsZ2mmT57k65W2r.jpg"
+//    },
+//    {
+//      "id": 35,
+//      "title": "Blade Runner",
+//      "genre": "Ciencia ficción",
+//      "year": 1982,
+//      "rating": 8.1,
+//      "image": "https://image.tmdb.org/t/p/w500/kNBvc6eNEVlHVCa2yM5oW9uIuAu.jpg"
+//    },
+//    {
+//      "id": 36,
+//      "title": "Coco",
+//      "genre": "Animación",
+//      "year": 2017,
+//      "rating": 8.4,
+//      "image": "https://image.tmdb.org/t/p/w500/6iQ4b5oJpPj5S0PS2eW4pQeBwJ5.jpg"
+//    },
+//    {
+//      "id": 37,
+//      "title": "Spider-Man: Un nuevo universo",
+//      "genre": "Animación",
+//      "year": 2018,
+//      "rating": 8.4,
+//      "image": "https://image.tmdb.org/t/p/w500/zQ2p43tFwI8nFAdwicywfnm5d21.jpg"
+//    },
+//    {
+//      "id": 38,
+//      "title": "WALL·E",
+//      "genre": "Animación",
+//      "year": 2008,
+//      "rating": 8.4,
+//      "image": "https://image.tmdb.org/t/p/w500/8p1PkPS92yPCa5ZJd46lqN2hYw.jpg"
+//    },
+//    {
+//      "id": 39,
+//      "title": "La princesa Mononoke",
+//      "genre": "Animación",
+//      "year": 1997,
+//      "rating": 8.4,
+//      "image": "https://image.tmdb.org/t/p/w500/7zKbv5pAWtqVfqmmqvXzcth4d1K.jpg"
+//    },
+//    {
+//      "id": 40,
+//      "title": "Oldboy",
+//      "genre": "Misterio",
+//      "year": 2003,
+//      "rating": 8.4,
+//      "image": "https://image.tmdb.org/t/p/w500/5GC42GAzSn8xT8sa4mc1qQ85I8S.jpg"
+//    },
+//    {
+//      "id": 41,
+//      "title": "Amélie",
+//      "genre": "Comedia",
+//      "year": 2001,
+//      "rating": 8.3,
+//      "image": "https://image.tmdb.org/t/p/w500/8vx7Emdt2e4K4g1h5LJC0Cqj2bF.jpg"
+//    },
+//    {
+//      "id": 42,
+//      "title": "El resplandor",
+//      "genre": "Terror",
+//      "year": 1980,
+//      "rating": 8.4,
+//      "image": "https://image.tmdb.org/t/p/w500/yhf0nDB4uF1gOaGvW7gW32zaPfE.jpg"
+//    },
+//    {
+//      "id": 43,
+//      "title": "Malditos bastardos",
+//      "genre": "Bélico",
+//      "year": 2009,
+//      "rating": 8.3,
+//      "image": "https://image.tmdb.org/t/p/w500/5w3eTqs639JpWz0a1A3ROdC9Xp2.jpg"
+//    },
+//    {
+//      "id": 44,
+//      "title": "Django desencadenado",
+//      "genre": "Western",
+//      "year": 2012,
+//      "rating": 8.4,
+//      "image": "https://image.tmdb.org/t/p/w500/yRSW7a3bB0Ld2nwnu7lJc6pWfTU.jpg"
+//    },
+//    {
+//      "id": 45,
+//      "title": "Reservoir Dogs",
+//      "genre": "Crimen",
+//      "year": 1992,
+//      "rating": 8.3,
+//      "image": "https://image.tmdb.org/t/p/w500/1wY4psJ2X5eN8uJts0o1a7o5sB.jpg"
+//    },
+//    {
+//      "id": 46,
+//      "title": "Braveheart",
+//      "genre": "Historia",
+//      "year": 1995,
+//      "rating": 8.3,
+//      "image": "https://image.tmdb.org/t/p/w500/4n041aKKBc2tY24o30cISL5pudB.jpg"
+//    },
+//    {
+//      "id": 47,
+//      "title": "Toy Story",
+//      "genre": "Animación",
+//      "year": 1995,
+//      "rating": 8.3,
+//      "image": "https://image.tmdb.org/t/p/w500/uMZqKhT4N20w3eAYsQc3g1Lff2u.jpg"
+//    },
+//    {
+//      "id": 48,
+//      "title": "Cantando bajo la lluvia",
+//      "genre": "Musical",
+//      "year": 1952,
+//      "rating": 8.3,
+//      "image": "https://image.tmdb.org/t/p/w500/oO3j4sgP0TqHQe451dOaEGcv4bY.jpg"
+//    },
+//    {
+//      "id": 49,
+//      "title": "El gran Lebowski",
+//      "genre": "Comedia",
+//      "year": 1998,
+//      "rating": 8.1,
+//      "image": "https://image.tmdb.org/t/p/w500/8L44avp5pRS03nEUnO9n9rO1H2a.jpg"
+//    },
+//    {
+//      "id": 50,
+//      "title": "Mad Max: Furia en la carretera",
+//      "genre": "Acción",
+//      "year": 2015,
+//      "rating": 8.1,
+//      "image": "https://image.tmdb.org/t/p/w500/nTMmpvR9iJtBOADk4hslt23C42v.jpg"
+//    }
+
+
