@@ -5,6 +5,11 @@ import { MovieCardComponent } from '../../components/movie-card/movie-card.compo
 import {Movie} from "../../../../core/models/movie.model";
 import {MovieService} from "../../../../core/services/movie.service";
 
+/**
+ * Componente principal para la página que muestra la lista de películas.
+ * Se encarga de obtener los datos y renderizar una `MovieCardComponent` por cada película.
+ */
+
 @Component({
   selector: 'app-movie-list',
   standalone: true,
@@ -13,10 +18,22 @@ import {MovieService} from "../../../../core/services/movie.service";
   styleUrls: ['./movie-list.component.css']
 })
 export class MovieListComponent implements OnInit {
+
+  // Lista de películas que se mostrarán en la vista
   movies: Movie[] = [];
+
   private movieService = inject(MovieService);
 
   ngOnInit() {
-    this.movieService.getMovies().subscribe(data => this.movies = data);
+    this.getMovies();
+  }
+
+  /**
+   * Carga las películas desde el servicio y las asigna a la variable local `movies`.
+   */
+  getMovies(): void {
+    this.movieService.getMovies().subscribe(data => {
+      this.movies = data;
+    });
   }
 }

@@ -18,6 +18,8 @@ jobs:
           node-version: 18
 
       - run: npm install
+      - run: npm run lint
+      - run: npm run test -- --watch=false --browsers=ChromeHeadless
       - run: npm run build -- --configuration production
 
       - name: Deploy to GitHub Pages

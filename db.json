@@ -16,7 +16,7 @@
       "description": "La continuación de la saga de la familia Corleone, explorando su ascenso al poder.",
       "year": 1974,
       "rating": 8.9,
-      "image_url": "https://pics.filmaffinity.com/the_godfather_part_ii-617194725-large.jpg"
+      "image_url": "https://pics.filmaffinity.com/the_godfather_part_ii-617901053-large.jpg"
     },
     {
       "id": 3,
@@ -134,6 +134,15 @@
       "year": 1999,
       "rating": 8.5,
       "image_url": "https://pics.filmaffinity.com/fight_club-320750671-large.jpg"
+    },
+    {
+      "id": 16,
+      "title": "Rocky",
+      "genre": "Drama, Deporte",
+      "description": "Un desconocido boxeador a quien se le ofrece luchar por el título mundial de pesos pesados.",
+      "year": 1976,
+      "rating": 7.1,
+      "image_url": "https://pics.filmaffinity.com/rocky-253483905-large.jpg"
     }
   ]
 
