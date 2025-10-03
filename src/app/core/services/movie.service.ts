@@ -20,8 +20,6 @@ export class MovieService {
   //Inyección del httpclient para peticiones web
   private http = inject(HttpClient);
 
-  constructor() { }
-
   //Recupera la lista completa de películas del API. Devuelve un observable que emite un array de pelis
   getMovies(): Observable<Movie[]> {
     return this.http.get<Movie[]>(this.apiUrl);
