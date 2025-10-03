@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {inject, Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {Movie} from "../models/movie.model";
@@ -18,7 +18,9 @@ export class MovieService {
   private apiUrl = 'http://localhost:3000/movies';
 
   //Inyección del httpclient para peticiones web
-  constructor(private http: HttpClient) { }
+  private http = inject(HttpClient);
+
+  constructor() { }
 
   //Recupera la lista completa de películas del API. Devuelve un observable que emite un array de pelis
   getMovies(): Observable<Movie[]> {
