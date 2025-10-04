@@ -1,12 +1,46 @@
-import { Component } from '@angular/core';
+import {Component, inject, OnInit} from '@angular/core';
+import {ActivatedRoute, Router} from "@angular/router";
+import {CommonModule} from "@angular/common";
+import {MovieService} from "../../../../core/services/movie.service";
+import {Movie} from "../../../../core/models/movie.model";
+import {
+  MatCard, MatCardActions,
+  MatCardContent,
+  MatCardHeader,
+  MatCardImage,
+  MatCardSubtitle,
+  MatCardTitle
+} from "@angular/material/card";
+import {MatChip, MatChipSet} from "@angular/material/chips";
+import {MatButton} from "@angular/material/button";
 
 @Component({
   selector: 'app-movie-detail',
   standalone: true,
-  imports: [],
+  imports: [CommonModule, MatCard, MatCardHeader, MatCardTitle, MatCardSubtitle, MatChipSet, MatChip, MatCardImage, MatCardContent, MatCardActions, MatButton],
   templateUrl: './movie-detail.component.html',
   styleUrl: './movie-detail.component.css'
 })
-export class MovieDetailComponent {
+export class MovieDetailComponent implements OnInit {
 
+  //Inyecciones
+  private ruta = inject(ActivatedRoute)
+  private movieService = inject(MovieService);
+  private router = inject(Router);
+
+  movie?: Movie
+
+  ngOnInit(): void {
+    //Recuperar el id
+    const id = Number(this.ruta.snapshot.paramMap.get('id'));
+
+    //Acceder a la película mediante su método por ID
+    this.movieService.getMovieById(id).subscribe((data => {
+      this.movie = data;
+    }))
+  }
+
+  irAtras() {
+    this.router.navigate(['/movies']);
+  }
 }

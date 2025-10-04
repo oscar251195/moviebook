@@ -1,9 +1,8 @@
 <div class="container mx-auto p-6">
-  <h1 class="text-3xl font-bold mb-6">🎬 MovieBook</h1>
+  <h1 class="text-3xl mb-6 text-gray-600 text-center">🎬 MovieBook</h1>
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-    <app-movie-card
-      *ngFor="let movie of movies"
-      [movie]="movie">
-    </app-movie-card>
+    <a *ngFor="let movie of movies" [routerLink]="['/movies', movie.id]">
+      <app-movie-card [movie]="movie"></app-movie-card>
+    </a>
   </div>
 </div>

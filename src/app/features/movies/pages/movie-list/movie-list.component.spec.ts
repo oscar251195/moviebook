@@ -4,6 +4,7 @@ import { MovieListComponent } from './movie-list.component';
 import {Movie} from "../../../../core/models/movie.model";
 import {of} from "rxjs";
 import {MovieService} from "../../../../core/services/movie.service";
+import {provideRouter} from "@angular/router";
 
 // Creamos un mock simple del servicio
 class MockMovieService {
@@ -19,7 +20,8 @@ describe('MovieListComponent', () => {
     await TestBed.configureTestingModule({
       imports: [MovieListComponent],
       providers: [
-        { provide: MovieService, useClass: MockMovieService } // Inyectamos el mock
+        { provide: MovieService, useClass: MockMovieService },
+        provideRouter([])
       ]
     })
     .compileComponents();
