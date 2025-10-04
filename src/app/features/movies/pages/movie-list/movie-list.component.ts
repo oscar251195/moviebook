@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { MovieCardComponent } from '../../components/movie-card/movie-card.component';
 import {Movie} from "../../../../core/models/movie.model";
 import {MovieService} from "../../../../core/services/movie.service";
+import {RouterLink} from "@angular/router";
 
 /**
  * Componente principal para la página que muestra la lista de películas.
@@ -13,7 +14,7 @@ import {MovieService} from "../../../../core/services/movie.service";
 @Component({
   selector: 'app-movie-list',
   standalone: true,
-  imports: [CommonModule, MovieCardComponent],
+  imports: [CommonModule, MovieCardComponent, RouterLink],
   templateUrl: './movie-list.component.html',
   styleUrls: ['./movie-list.component.css']
 })
