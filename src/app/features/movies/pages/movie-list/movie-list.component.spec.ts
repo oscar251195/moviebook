@@ -39,4 +39,29 @@ describe('MovieListComponent', () => {
     expect(component.movies.length).toBeGreaterThan(0);
     expect(component.movies[0].title).toBe('Test Movie');
   });
+
+  it('should initialize filter form with empty values', () => {
+    expect(component.filterForm.get('search')?.value).toBe('');
+    expect(component.filterForm.get('genre')?.value).toBe('');
+  });
+
+  it('should filter movies by title', () => {
+    component.movies = [
+      { id: 1, title: 'Test Movie', genre: 'Drama', description: '', year: 2020, rating: 8, image_url: '' },
+      { id: 2, title: 'Other Film', genre: 'Comedy', description: '', year: 2021, rating: 7, image_url: '' },
+    ];
+    component.applyFilters('test', '');
+    expect(component.filteredMovies.length).toBe(1);
+    expect(component.filteredMovies[0].title).toBe('Test Movie');
+  });
+
+  it('should filter movies by genre', () => {
+    component.movies = [
+      { id: 1, title: 'Test Movie', genre: 'Drama', description: '', year: 2020, rating: 8, image_url: '' },
+      { id: 2, title: 'Other Film', genre: 'Comedy', description: '', year: 2021, rating: 7, image_url: '' },
+    ];
+    component.applyFilters('', 'Comedy');
+    expect(component.filteredMovies.length).toBe(1);
+    expect(component.filteredMovies[0].genre).toBe('Comedy');
+  });
 });
