@@ -1,8 +1,29 @@
 <div class="container mx-auto p-6">
   <h1 class="text-3xl mb-6 text-gray-600 text-center">🎬 MovieBook</h1>
-  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-    <a *ngFor="let movie of movies" [routerLink]="['/movies', movie.id]">
-      <app-movie-card [movie]="movie"></app-movie-card>
-    </a>
+
+  <!-- Formulario -->
+  <form [formGroup]="filterForm" class="mb-6 flex flex-col sm:flex-row gap-4">
+    <input
+      type="text"
+      formControlName="search"
+      placeholder="Buscar película..."
+      class="border rounded-lg px-4 py-2 w-full sm:w-1/2"
+    />
+
+    <select formControlName="genre" class="border rounded-lg px-4 py-2">
+      <option value="">Todos los géneros</option>
+      @for (genre of uniqueGenres; track genre) {
+        <option [value]="genre">{{ genre }}</option>
+      }
+    </select>
+  </form>
+
+  <!-- Listado filtrado -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+    @for (movie of filteredMovies; track movie.id) {
+      <a [routerLink]="['/movies', movie.id]">
+        <app-movie-card [movie]="movie"></app-movie-card>
+      </a>
+    }
   </div>
 </div>
