@@ -13,7 +13,7 @@
       </mat-card-subtitle>
     </mat-card-header>
 
-    <img mat-card-image [src]="movie.image_url" [alt]="movie.title" />
+    <img mat-card-image [src]="movie.image_url" [alt]="movie.title"/>
 
     <!-- Contenido -->
     <mat-card-content class="mt-4">
@@ -25,12 +25,28 @@
       </div>
     </mat-card-content>
 
+    <mat-card-actions class="flex justify-between p-4">
+      <!-- Editar -->
+      <button
+        type="button"
+        class="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-xl shadow hover:bg-green-600 transition" (click)="editMovie(movie.id)">
+        <mat-icon fontIcon="edit"></mat-icon>
+        <span>Editar</span>
+      </button>
+
+      <!-- Eliminar -->
+      <button
+        type="button"
+        class="flex items-center gap-2 px-4 py-2 bg-red-600 text-white rounded-xl shadow hover:bg-black transition">
+        <mat-icon fontIcon="delete"></mat-icon>
+        <span>Eliminar</span>
+      </button>
+    </mat-card-actions>
     <!-- Acciones -->
     <mat-card-actions class="mt-4">
       <button
-        mat-raised-button
-        color="primary"
-        (click)="irAtras()"
+        (click)="goBack()"
+        class="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-xl shadow transition"
       >
         ← Volver al listado
       </button>

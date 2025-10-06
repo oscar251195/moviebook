@@ -1,30 +1,37 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import {ComponentFixture, fakeAsync, TestBed, tick} from '@angular/core/testing';
 import { MovieListComponent } from './movie-list.component';
-import {Movie} from "../../../../core/models/movie.model";
+import { MovieService } from '../../../../core/services/movie.service';
+import { signal } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
+import { Movie } from '../../../../core/models/movie.model';
+import { provideRouter } from '@angular/router';
 import {of} from "rxjs";
-import {MovieService} from "../../../../core/services/movie.service";
-import {provideRouter} from "@angular/router";
 
-// Creamos un mock simple del servicio
+// Mock del servicio con signal simulado
 class MockMovieService {
-  getMovies() {
-    return of([{ id: 1, title: 'Test Movie', genre: 'Drama', description: 'Test Movie description', year: 2020, rating: 9, image_url: '' } as Movie]);
+  movies = signal<Movie[]>([
+    { id: 1, title: 'Avatar', genre: 'Sci-Fi', description: '', year: 2009, rating: 9, image_url: '' },
+    { id: 2, title: 'Titanic', genre: 'Romance', description: '', year: 1997, rating: 8, image_url: '' },
+    { id: 3, title: 'Alien', genre: 'Sci-Fi', description: '', year: 1979, rating: 9, image_url: '' }
+  ]);
+
+  loadMovies() {
+    return of([]); // Devuelve un Observable que se completa inmediatamente.
   }
 }
-describe('MovieListComponent', () => {
+
+describe('MovieListComponent (Signals)', () => {
   let component: MovieListComponent;
   let fixture: ComponentFixture<MovieListComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [MovieListComponent],
+      imports: [MovieListComponent, ReactiveFormsModule],
       providers: [
         { provide: MovieService, useClass: MockMovieService },
         provideRouter([])
       ]
-    })
-    .compileComponents();
+    }).compileComponents();
 
     fixture = TestBed.createComponent(MovieListComponent);
     component = fixture.componentInstance;
@@ -35,33 +42,31 @@ describe('MovieListComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should load movies from service on init', () => {
-    expect(component.movies.length).toBeGreaterThan(0);
-    expect(component.movies[0].title).toBe('Test Movie');
+
+  it('should show all movies initially', () => {
+    expect(component.filteredMovies().length).toBe(3);
   });
 
-  it('should initialize filter form with empty values', () => {
-    expect(component.filterForm.get('search')?.value).toBe('');
-    expect(component.filterForm.get('genre')?.value).toBe('');
+  it('should filter movies by search term', fakeAsync(() => {
+    component.filterForm.get('search')!.setValue('titanic');
+    tick(200);
+
+    expect(component.filteredMovies().length).toBe(1);
+    expect(component.filteredMovies()[0].title).toBe('Titanic');
+  }));
+
+  it('should filter movies by genre', async () => {
+    component.filterForm.get('genre')!.setValue('Sci-Fi');
+    await fixture.whenStable();
+
+    expect(component.filteredMovies().length).toBe(2);
+    expect(component.filteredMovies()[0].genre).toBe('Sci-Fi');
   });
 
-  it('should filter movies by title', () => {
-    component.movies = [
-      { id: 1, title: 'Test Movie', genre: 'Drama', description: '', year: 2020, rating: 8, image_url: '' },
-      { id: 2, title: 'Other Film', genre: 'Comedy', description: '', year: 2021, rating: 7, image_url: '' },
-    ];
-    component.applyFilters('test', '');
-    expect(component.filteredMovies.length).toBe(1);
-    expect(component.filteredMovies[0].title).toBe('Test Movie');
-  });
-
-  it('should filter movies by genre', () => {
-    component.movies = [
-      { id: 1, title: 'Test Movie', genre: 'Drama', description: '', year: 2020, rating: 8, image_url: '' },
-      { id: 2, title: 'Other Film', genre: 'Comedy', description: '', year: 2021, rating: 7, image_url: '' },
-    ];
-    component.applyFilters('', 'Comedy');
-    expect(component.filteredMovies.length).toBe(1);
-    expect(component.filteredMovies[0].genre).toBe('Comedy');
+  it('should compute unique genres correctly', () => {
+    const genres = component.uniqueGenres;
+    expect(genres).toContain('Sci-Fi');
+    expect(genres).toContain('Romance');
+    expect(genres.length).toBe(2);
   });
 });

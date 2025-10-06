@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 import {MovieListComponent} from "./features/movies/pages/movie-list/movie-list.component";
 import {MovieDetailComponent} from "./features/movies/pages/movie-detail/movie-detail.component";
+import {MovieFormComponent} from "./features/movies/components/movie-form/movie-form.component";
 
 export const routes: Routes = [
   {
@@ -14,7 +15,11 @@ export const routes: Routes = [
       import('./features/auth/auth.module').then(m => m.AuthModule)
   },
   { path: '', redirectTo: 'movies', pathMatch: 'full' },
+
+  { path: 'movies/new', component: MovieFormComponent },
+  { path: 'movies/edit/:id', component: MovieFormComponent },
   { path: 'movies', component: MovieListComponent },
   { path: 'movies/:id', component: MovieDetailComponent },
-  { path: '**', redirectTo: 'movies' }
+  { path: '**', redirectTo: 'movies' },
+
 ];

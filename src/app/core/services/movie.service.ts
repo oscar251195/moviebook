@@ -1,7 +1,8 @@
-import {inject, Injectable} from '@angular/core';
+import {inject, Injectable, signal} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {Observable} from "rxjs";
+import {Observable, tap} from "rxjs";
 import {Movie} from "../models/movie.model";
+import {toSignal} from "@angular/core/rxjs-interop";
 
 /**
  * Servicio central para gestionar las operaciones de datos de las películas.
@@ -20,28 +21,53 @@ export class MovieService {
   //Inyección del httpclient para peticiones web
   private http = inject(HttpClient);
 
-  //Recupera la lista completa de películas del API. Devuelve un observable que emite un array de pelis
-  getMovies(): Observable<Movie[]> {
-    return this.http.get<Movie[]>(this.apiUrl);
+  //Signal reactivo que guarda la lista de películas
+  movies = signal<Movie[]>([]);
+
+
+  /**
+   * Carga inicial desde la API y actualiza el signal `movies`.
+   */
+  loadMovies(): Observable<Movie[]> {
+    return this.http.get<Movie[]>(this.apiUrl).pipe(
+      tap(data => this.movies.set(data))
+    );
   }
 
-  //Recupera una única película del API usando el ID. Devuelve observable que emite la peli encontrada
-  getMovieById(id: number): Observable<Movie> {
+  /**
+   * Obtiene una película concreta por su ID (sin afectar al signal principal).
+   */
+  getMovieById(id: number) {
     return this.http.get<Movie>(`${this.apiUrl}/${id}`);
   }
 
-  //Envía una peli al API para crearla. Se le envía el objeto película a añadir sin ID. Devuelve un observable con la peli creada.
-  addMovie(movie: Movie): Observable<Movie> {
-    return this.http.post<Movie>(this.apiUrl, movie);
+  /**
+   * Añade una nueva película al servidor y actualiza el signal local.
+   */
+  addMovie(movie: Movie) {
+    return this.http.post<Movie>(this.apiUrl, movie).pipe(
+      tap(newMovie => this.movies.update(movies => [...movies, newMovie]))
+    );
   }
 
-  //Actualiza una peli existente. Devuelve un observable con esta actualizada
-  updateMovie(movie: Movie): Observable<Movie> {
-    return this.http.put<Movie>(`${this.apiUrl}/${movie.id}`, movie);
+  /**
+   * Actualiza una película existente en el servidor y en el signal local.
+   */
+  updateMovie(movie: Movie) {
+    return this.http.put<Movie>(`${this.apiUrl}/${movie.id}`, movie).pipe(
+      tap(updated => this.movies.update(movies =>
+        movies.map(m => m.id === updated.id ? updated : m)
+      ))
+    );
   }
 
-  //Elimina una película usando su ID. Devuelve un observable que se completa cuando la operación termina. No emite valor.
-  deleteMovie(id: number): Observable<void> {
-    return this.http.delete<void>(`${this.apiUrl}/${id}`);
+  /**
+   * Elimina una película del servidor y la quita del signal local.
+   */
+  deleteMovie(id: number) {
+    return this.http.delete<void>(`${this.apiUrl}/${id}`).pipe(
+      tap(() => this.movies.update(movies => movies.filter(m => m.id !== id)))
+    );
   }
+
 }
