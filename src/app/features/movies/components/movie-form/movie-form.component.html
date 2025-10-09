@@ -6,12 +6,12 @@
   <form [formGroup]="formGroup" (ngSubmit)="onSubmit()" class="space-y-4">
     <div>
       <label class="block font-medium">Título</label>
-      <input formControlName="title" type="text" class="w-full border p-2 rounded" />
+      <input formControlName="title" type="text" required class="w-full border p-2 rounded"/>
     </div>
 
     <div>
       <label class="block font-medium">Descripción</label>
-      <textarea formControlName="description" class="w-full border p-2 rounded"></textarea>
+      <textarea formControlName="description" required class="w-full border p-2 rounded"></textarea>
     </div>
 
     <div class="grid grid-cols-2 gap-4">
@@ -36,9 +36,9 @@
     </div>
 
     <div class="flex justify-between pt-4">
-      <button type="button" (click)="cancel()" class="px-4 py-2 bg-gray-300 rounded-xl">Cancelar</button>
+      <button type="button" (click)="cancel()" class="px-4 py-2 bg-gray-300 rounded-xl ">Cancelar</button>
       <button type="submit" [disabled]="formGroup.invalid"
-              class="px-4 py-2 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition">
+              class="px-4 py-2 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition disabled:bg-gray-400 disabled:cursor-not-allowed disabled:shadow-none">
         {{ editing() ? 'Guardar cambios' : 'Añadir película' }}
       </button>
     </div>

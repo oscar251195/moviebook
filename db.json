@@ -143,6 +143,15 @@
       "year": 1976,
       "rating": 7.1,
       "image_url": "https://pics.filmaffinity.com/rocky-253483905-large.jpg"
+    },
+    {
+      "id": "17",
+      "title": "Una historia del Bronx",
+      "description": "El gángster Sonny (Chazz Palminteri) es el rey del barrio del Bronx, donde vive el pequeño Calogero.",
+      "year": 1993,
+      "genre": "Drama",
+      "rating": 7.5,
+      "image_url": "https://pics.filmaffinity.com/a_bronx_tale-353446991-large.jpg"
     }
   ]
 }

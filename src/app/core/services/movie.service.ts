@@ -1,8 +1,7 @@
 import {inject, Injectable, signal} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {Observable, tap} from "rxjs";
+import {map, Observable, tap} from "rxjs";
 import {Movie} from "../models/movie.model";
-import {toSignal} from "@angular/core/rxjs-interop";
 
 /**
  * Servicio central para gestionar las operaciones de datos de las películas.
@@ -16,7 +15,7 @@ import {toSignal} from "@angular/core/rxjs-interop";
 export class MovieService {
 
   // Endpoint del JSON Server
-  private apiUrl = 'http://localhost:3000/movies';
+  private apiUrl = 'http://localhost:3001/movies';
 
   //Inyección del httpclient para peticiones web
   private http = inject(HttpClient);
@@ -30,6 +29,7 @@ export class MovieService {
    */
   loadMovies(): Observable<Movie[]> {
     return this.http.get<Movie[]>(this.apiUrl).pipe(
+      map(data => data.map(movie => ({ ...movie, id: movie.id }))),
       tap(data => this.movies.set(data))
     );
   }
@@ -37,9 +37,12 @@ export class MovieService {
   /**
    * Obtiene una película concreta por su ID (sin afectar al signal principal).
    */
-  getMovieById(id: number) {
-    return this.http.get<Movie>(`${this.apiUrl}/${id}`);
+  getMovieById(id: string) {
+    return this.http.get<Movie>(`${this.apiUrl}/${id}`).pipe(
+      map(movie => ({ ...movie, id: movie.id }))
+    );
   }
+
 
   /**
    * Añade una nueva película al servidor y actualiza el signal local.
@@ -64,7 +67,7 @@ export class MovieService {
   /**
    * Elimina una película del servidor y la quita del signal local.
    */
-  deleteMovie(id: number) {
+  deleteMovie(id: string) {
     return this.http.delete<void>(`${this.apiUrl}/${id}`).pipe(
       tap(() => this.movies.update(movies => movies.filter(m => m.id !== id)))
     );

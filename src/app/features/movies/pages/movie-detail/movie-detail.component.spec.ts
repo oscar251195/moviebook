@@ -24,7 +24,7 @@ describe('MovieDetailComponent', () => {
 
     //Respuesta simulada
     mockService.getMovieById.and.returnValue(of({
-      id: 1, title: 'Test Movie', genre: 'Drama', description: 'Desc',
+      id: '1', title: 'Test Movie', genre: 'Drama', description: 'Desc',
       year: 2020, rating: 8, image_url: 'test.jpg'
     } as Movie));
 
@@ -49,13 +49,13 @@ describe('MovieDetailComponent', () => {
   });
 
   it('should load movie on init', () => {
-    expect(mockService.getMovieById).toHaveBeenCalledWith(1);
+    expect(mockService.getMovieById).toHaveBeenCalledWith("1");
     expect(component.movie?.title).toBe('Test Movie');
   });
 
   it('should navigate to /movies when back button is clicked', () => {
     // Buscamos el botón en el DOM.
-    const backButton = fixture.debugElement.query(By.css('button'));
+    const backButton = fixture.debugElement.query(By.css('#back-button'));
     // Simulamos un clic del usuario en el botón.
     backButton.triggerEventHandler('click', null);
     // Verificamos que, como resultado del clic, se llamó a la función de navegación del router

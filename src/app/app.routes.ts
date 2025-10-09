@@ -1,25 +1,23 @@
 import { Routes } from '@angular/router';
-import {MovieListComponent} from "./features/movies/pages/movie-list/movie-list.component";
-import {MovieDetailComponent} from "./features/movies/pages/movie-detail/movie-detail.component";
-import {MovieFormComponent} from "./features/movies/components/movie-form/movie-form.component";
+import { MovieListComponent } from './features/movies/pages/movie-list/movie-list.component';
+import { MovieDetailComponent } from './features/movies/pages/movie-detail/movie-detail.component';
+import { MovieFormComponent } from './features/movies/components/movie-form/movie-form.component';
 
 export const routes: Routes = [
-  {
-    path: 'movies',
-    loadChildren: () =>
-      import('./features/movies/movies.routes').then(r => r.MOVIES_ROUTES)
-  },
-  {
-    path: 'auth',
-    loadChildren: () =>
-      import('./features/auth/auth.module').then(m => m.AuthModule)
-  },
   { path: '', redirectTo: 'movies', pathMatch: 'full' },
 
-  { path: 'movies/new', component: MovieFormComponent },
-  { path: 'movies/edit/:id', component: MovieFormComponent },
+  // Listado principal
   { path: 'movies', component: MovieListComponent },
-  { path: 'movies/:id', component: MovieDetailComponent },
-  { path: '**', redirectTo: 'movies' },
 
+  // Crear nueva película
+  { path: 'movies/new', component: MovieFormComponent },
+
+  // Editar película existente
+  { path: 'movies/edit/:id', component: MovieFormComponent },
+
+  // Detalle de película
+  { path: 'movies/:id', component: MovieDetailComponent },
+
+  // Ruta por defecto
+  { path: '**', redirectTo: 'movies' },
 ];

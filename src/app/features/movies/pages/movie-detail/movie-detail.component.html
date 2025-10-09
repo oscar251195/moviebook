@@ -37,18 +37,17 @@
       <!-- Eliminar -->
       <button
         type="button"
-        class="flex items-center gap-2 px-4 py-2 bg-red-600 text-white rounded-xl shadow hover:bg-black transition">
+        class="flex items-center gap-2 px-4 py-2 bg-red-600 text-white rounded-xl shadow hover:bg-black transition" (click)="deleteMovie(movie.id)">
         <mat-icon fontIcon="delete"></mat-icon>
         <span>Eliminar</span>
       </button>
     </mat-card-actions>
     <!-- Acciones -->
     <mat-card-actions class="mt-4">
-      <button
+      <button id="back-button"
         (click)="goBack()"
-        class="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-xl shadow transition"
-      >
-        ← Volver al listado
+        class="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-xl shadow transition" >
+        <mat-icon fontIcon="arrow_back"></mat-icon>Volver al listado
       </button>
     </mat-card-actions>
   </mat-card>

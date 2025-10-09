@@ -10,9 +10,9 @@ import {of} from "rxjs";
 // Mock del servicio con signal simulado
 class MockMovieService {
   movies = signal<Movie[]>([
-    { id: 1, title: 'Avatar', genre: 'Sci-Fi', description: '', year: 2009, rating: 9, image_url: '' },
-    { id: 2, title: 'Titanic', genre: 'Romance', description: '', year: 1997, rating: 8, image_url: '' },
-    { id: 3, title: 'Alien', genre: 'Sci-Fi', description: '', year: 1979, rating: 9, image_url: '' }
+    { id: '1', title: 'Avatar', genre: 'Sci-Fi', description: '', year: 2009, rating: 9, image_url: '' },
+    { id: '2', title: 'Titanic', genre: 'Romance', description: '', year: 1997, rating: 8, image_url: '' },
+    { id: '3', title: 'Alien', genre: 'Sci-Fi', description: '', year: 1979, rating: 9, image_url: '' }
   ]);
 
   loadMovies() {

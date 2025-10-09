@@ -17,7 +17,7 @@ describe('MovieCardComponent', () => {
 
     // Simulamos datos de entrada
     component.movie = {
-      id: 1,
+      id: '1',
       title: 'Test Movie',
       genre: 'Drama',
       description: 'Test Movie description',

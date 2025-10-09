@@ -12,13 +12,14 @@ import {
   MatCardTitle
 } from "@angular/material/card";
 import {MatChip, MatChipSet} from "@angular/material/chips";
-import {MatButton} from "@angular/material/button";
 import {MatIcon} from "@angular/material/icon";
+import {ConfirmDialogComponent} from "../../components/movie-form/movie-dialog/confirm-dialog.component";
+import {MatDialog} from "@angular/material/dialog";
 
 @Component({
   selector: 'app-movie-detail',
   standalone: true,
-  imports: [CommonModule, MatCard, MatCardHeader, MatCardTitle, MatCardSubtitle, MatChipSet, MatChip, MatCardImage, MatCardContent, MatCardActions, MatButton, RouterLink, MatIcon],
+  imports: [CommonModule, MatCard, MatCardHeader, MatCardTitle, MatCardSubtitle, MatChipSet, MatChip, MatCardImage, MatCardContent, MatCardActions, MatIcon],
   templateUrl: './movie-detail.component.html',
   styleUrl: './movie-detail.component.css'
 })
@@ -28,21 +29,35 @@ export class MovieDetailComponent implements OnInit {
   private ruta = inject(ActivatedRoute)
   private movieService = inject(MovieService);
   private router = inject(Router);
+  private dialog = inject(MatDialog);
 
   movie?: Movie
 
   ngOnInit(): void {
     //Recuperar el id
-    const id = Number(this.ruta.snapshot.paramMap.get('id'));
-
+    const id = this.ruta.snapshot.paramMap.get('id');
+    if (!id) return;
     //Acceder a la película mediante su método por ID
     this.movieService.getMovieById(id).subscribe((data => {
       this.movie = data;
-    }))
+    }));
   }
 
-  editMovie(id: number) {
+  editMovie(id: string) {
     this.router.navigate(['movies/edit/', id]);
+  }
+
+  deleteMovie(id: string): void {
+    const dialogRef = this.dialog.open(ConfirmDialogComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.movieService.deleteMovie(id).subscribe({
+          next: () => this.router.navigate(['movies/']),
+          error: err => console.error('Error eliminando la película: ', err)
+        });
+      }
+    })
   }
 
   goBack(): void {
