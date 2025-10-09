@@ -1,16 +1,16 @@
 {
   "movies": [
     {
-      "id": 1,
+      "id": "1",
       "title": "El padrino",
       "genre": "Crimen, Drama",
       "description": "La historia de una poderosa familia mafiosa en Nueva York dirigida por Don Vito Corleone.",
       "year": 1972,
-      "rating": 9.0,
+      "rating": 9,
       "image_url": "https://pics.filmaffinity.com/the_godfather-488102675-large.jpg"
     },
     {
-      "id": 2,
+      "id": "2",
       "title": "El padrino. Parte II",
       "genre": "Crimen, Drama",
       "description": "La continuación de la saga de la familia Corleone, explorando su ascenso al poder.",
@@ -19,7 +19,7 @@
       "image_url": "https://pics.filmaffinity.com/the_godfather_part_ii-617901053-large.jpg"
     },
     {
-      "id": 3,
+      "id": "3",
       "title": "Doce hombres sin piedad",
       "genre": "Drama",
       "description": "Un jurado debe decidir el destino de un joven acusado de asesinato.",
@@ -28,7 +28,7 @@
       "image_url": "https://pics.filmaffinity.com/12_angry_men-122099105-large.jpg"
     },
     {
-      "id": 4,
+      "id": "4",
       "title": "La lista de Schindler",
       "genre": "Biografía, Drama, Bélico",
       "description": "La historia real de Oskar Schindler, quien salvó a más de mil judíos durante el Holocausto.",
@@ -37,7 +37,7 @@
       "image_url": "https://pics.filmaffinity.com/schindler_s_list-473662617-large.jpg"
     },
     {
-      "id": 5,
+      "id": "5",
       "title": "Testigo de cargo",
       "genre": "Crimen, Drama, Misterio",
       "description": "Un hombre es acusado de asesinato y su esposa lo defiende en el juicio.",
@@ -46,7 +46,7 @@
       "image_url": "https://pics.filmaffinity.com/witness_for_the_prosecution-236651370-large.jpg"
     },
     {
-      "id": 6,
+      "id": "6",
       "title": "Luces de la ciudad",
       "genre": "Comedia, Drama, Romance",
       "description": "Un vagabundo se enamora de una florista ciega y trata de ayudarla.",
@@ -55,7 +55,7 @@
       "image_url": "https://pics.filmaffinity.com/city_lights-825971402-large.jpg"
     },
     {
-      "id": 7,
+      "id": "7",
       "title": "El mago de Oz",
       "genre": "Aventura, Familia, Fantasía",
       "description": "Una joven es transportada a un mundo mágico donde busca al Mago de Oz para regresar a casa.",
@@ -64,7 +64,7 @@
       "image_url": "https://pics.filmaffinity.com/the_wizard_of_oz-385351250-large.jpg"
     },
     {
-      "id": 8,
+      "id": "8",
       "title": "Ciudadano Kane",
       "genre": "Drama, Misterio",
       "description": "La vida y carrera de un magnate de la prensa estadounidense.",
@@ -73,7 +73,7 @@
       "image_url": "https://pics.filmaffinity.com/citizen_kane-217208961-large.jpg"
     },
     {
-      "id": 9,
+      "id": "9",
       "title": "El tercer hombre",
       "genre": "Crimen, Drama, Misterio",
       "description": "Un escritor investiga la muerte de su amigo en la Viena de la posguerra.",
@@ -82,7 +82,7 @@
       "image_url": "https://pics.filmaffinity.com/the_third_man-366260443-large.jpg"
     },
     {
-      "id": 10,
+      "id": "10",
       "title": "Déjame entrar",
       "genre": "Drama, Terror, Romance",
       "description": "Un niño solitario forma una amistad con una niña que resulta ser un vampiro.",
@@ -91,7 +91,7 @@
       "image_url": "https://pics.filmaffinity.com/lat_den_ratte_komma_in_let_the_right_one_in-361591202-large.jpg"
     },
     {
-      "id": 11,
+      "id": "11",
       "title": "La vida es bella",
       "genre": "Comedia, Drama, Bélico",
       "description": "Un hombre utiliza su imaginación para proteger a su hijo de los horrores del Holocausto.",
@@ -100,7 +100,7 @@
       "image_url": "https://pics.filmaffinity.com/la_vita_e_bella-646167341-large.jpg"
     },
     {
-      "id": 12,
+      "id": "12",
       "title": "El viaje de Chihiro",
       "genre": "Animación, Aventura, Familia",
       "description": "Una niña se encuentra en un mundo mágico y debe encontrar una forma de regresar a casa.",
@@ -109,7 +109,7 @@
       "image_url": "https://pics.filmaffinity.com/sen_to_chihiro_no_kamikakushi-348587850-large.jpg"
     },
     {
-      "id": 13,
+      "id": "13",
       "title": "La naranja mecánica",
       "genre": "Crimen, Drama, Ciencia ficción",
       "description": "Un joven lidera una banda de delincuentes en una sociedad futurista.",
@@ -118,7 +118,7 @@
       "image_url": "https://pics.filmaffinity.com/a_clockwork_orange-964766200-large.jpg"
     },
     {
-      "id": 14,
+      "id": "14",
       "title": "El séptimo sello",
       "genre": "Drama, Fantasía",
       "description": "Un caballero juega una partida de ajedrez con la Muerte durante la peste negra.",
@@ -127,7 +127,7 @@
       "image_url": "https://pics.filmaffinity.com/det_sjunde_inseglet_the_seventh_seal-346040626-large.jpg"
     },
     {
-      "id": 15,
+      "id": "15",
       "title": "El club de la lucha",
       "genre": "Drama",
       "description": "Un hombre insomne forma una sociedad secreta de lucha con un vendedor de jabón.",
@@ -136,14 +136,22 @@
       "image_url": "https://pics.filmaffinity.com/fight_club-320750671-large.jpg"
     },
     {
-      "id": 16,
+      "id": "16",
       "title": "Rocky",
       "genre": "Drama, Deporte",
       "description": "Un desconocido boxeador a quien se le ofrece luchar por el título mundial de pesos pesados.",
       "year": 1976,
       "rating": 7.1,
       "image_url": "https://pics.filmaffinity.com/rocky-253483905-large.jpg"
+    },
+    {
+      "id": "17",
+      "title": "Una historia del Bronx",
+      "description": "El gángster Sonny (Chazz Palminteri) es el rey del barrio del Bronx, donde vive el pequeño Calogero.",
+      "year": 1993,
+      "genre": "Drama",
+      "rating": 7.5,
+      "image_url": "https://pics.filmaffinity.com/a_bronx_tale-353446991-large.jpg"
     }
   ]
-
 }
