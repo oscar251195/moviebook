@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 import { HttpErrorResponse, HttpHandlerFn, HttpRequest } from '@angular/common/http';
-import { throwError } from 'rxjs';
+import {Observable, throwError} from 'rxjs';
 import { errorInterceptor } from './error.interceptor';
 import { NotificationService } from '../services/notification.service';
 
@@ -16,7 +16,7 @@ describe('errorInterceptor', () => {
     });
   });
 
-  const createHandler = (response$: any): HttpHandlerFn => {
+  const createHandler = (response$: Observable<any>): HttpHandlerFn => {
     //El parámetro 'req' ahora es '_req' para indicar que no se usa
     //El tipo de '_req' ahora es HttpRequest<unknown> para evitar el 'any'
     return (_req: HttpRequest<unknown>) => response$;
