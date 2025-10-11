@@ -4,7 +4,7 @@ import {MovieService} from "../../../../core/services/movie.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {CommonModule} from "@angular/common";
 import {Movie} from "../../../../core/models/movie.model";
-
+import {NotificationService} from "../../../../core/services/notification.service";
 
 @Component({
   selector: 'app-movie-form',
@@ -19,6 +19,7 @@ export class MovieFormComponent implements OnInit {
   private movieService = inject(MovieService);
   private route = inject(ActivatedRoute);
   private router = inject(Router);
+  private notify = inject(NotificationService);
 
   //Formulario
   formGroup = this.fb.group({
@@ -64,8 +65,11 @@ export class MovieFormComponent implements OnInit {
     if (this.editing()) {
       //Edición
       this.movieService.updateMovie(movieData).subscribe({
-        next: () => this.router.navigate(['/movies']),
-        error: (err) => console.error('Error actualizando: ', err),
+        next: () => {
+          this.notify.success('Película actualizada correctamente.');
+          this.router.navigate(['/movies']);
+        },
+        error: () => this.notify.error('Error al actualizar la película.'),
       });
     } else {
       //Creación
@@ -79,8 +83,11 @@ export class MovieFormComponent implements OnInit {
       } as Movie;
 
       this.movieService.addMovie(newMovie).subscribe({
-        next: () => this.router.navigate(['/movies']),
-        error: (err) => console.error('Error creando: ', err),
+        next: () => {
+          this.notify.success('Película creada correctamente.');
+          this.router.navigate(['/movies']);
+        },
+        error: () => this.notify.error('Error al crear la película.'),
       });
     }
   }
