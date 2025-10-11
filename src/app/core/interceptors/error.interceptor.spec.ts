@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
-import { HttpErrorResponse, HttpHandlerFn, HttpRequest } from '@angular/common/http';
-import {Observable, throwError} from 'rxjs';
+import {HttpErrorResponse, HttpEvent, HttpHandlerFn, HttpRequest} from '@angular/common/http';
+import { Observable, throwError } from 'rxjs';
 import { errorInterceptor } from './error.interceptor';
 import { NotificationService } from '../services/notification.service';
 
@@ -16,11 +16,10 @@ describe('errorInterceptor', () => {
     });
   });
 
-  const createHandler = (response$: Observable<any>): HttpHandlerFn => {
-    //El parámetro 'req' ahora es '_req' para indicar que no se usa
-    //El tipo de '_req' ahora es HttpRequest<unknown> para evitar el 'any'
-    return (_req: HttpRequest<unknown>) => response$;
+  const createHandler = (response$: Observable<HttpEvent<unknown>>): HttpHandlerFn => {
+    return () => response$;
   };
+
 
   it('should call NotificationService.error() when server is unreachable (status 0)', (done) => {
     const errorResponse = new HttpErrorResponse({ status: 0, statusText: 'Unknown Error' });
@@ -34,8 +33,7 @@ describe('errorInterceptor', () => {
           done();
         }
       });
-    })
-
+    });
   });
 
   it('should call NotificationService.error() with 404 message', (done) => {
@@ -44,14 +42,13 @@ describe('errorInterceptor', () => {
     const next = createHandler(throwError(() => errorResponse));
 
     TestBed.runInInjectionContext(() => {
-      errorInterceptor(req,next).subscribe({
+      errorInterceptor(req, next).subscribe({
         error: () => {
           expect(notificationServiceSpy.error).toHaveBeenCalledWith('Recurso no encontrado.');
           done();
         }
       });
-    })
-
+    });
   });
 
   it('should call NotificationService.error() with 500 message', (done) => {
@@ -66,8 +63,7 @@ describe('errorInterceptor', () => {
           done();
         }
       });
-    })
-
+    });
   });
 
   it('should call NotificationService.error() with custom message from server', (done) => {
@@ -75,7 +71,6 @@ describe('errorInterceptor', () => {
       status: 400,
       error: { message: 'Custom API error' }
     });
-    // Le pasamos 'null' como tercer argumento para indicar que el cuerpo está vacío.
     const req = new HttpRequest('POST', '/api', null);
     const next = createHandler(throwError(() => errorResponse));
 
@@ -86,8 +81,7 @@ describe('errorInterceptor', () => {
           done();
         }
       });
-    })
-
+    });
   });
 
   it('should rethrow the error after handling it', (done) => {
@@ -102,7 +96,6 @@ describe('errorInterceptor', () => {
           done();
         }
       });
-    })
-
+    });
   });
 });
