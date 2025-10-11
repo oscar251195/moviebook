@@ -17,7 +17,9 @@ describe('errorInterceptor', () => {
   });
 
   const createHandler = (response$: any): HttpHandlerFn => {
-    return (req: HttpRequest<any>) => response$;
+    //El parámetro 'req' ahora es '_req' para indicar que no se usa
+    //El tipo de '_req' ahora es HttpRequest<unknown> para evitar el 'any'
+    return (_req: HttpRequest<unknown>) => response$;
   };
 
   it('should call NotificationService.error() when server is unreachable (status 0)', (done) => {

@@ -80,7 +80,7 @@ export class MovieDetailComponent implements OnInit {
     });
 
     // Escuchamos a que el diálogo se cierre
-    dialogRef.afterClosed().subscribe(result => {
+    dialogRef.afterClosed().subscribe(() => {
       // Si se cerró (result no es undefined), navegamos
       this.router.navigate(['/movies']);
     });
