@@ -5,6 +5,7 @@ import {of} from 'rxjs';
 import {provideRouter} from '@angular/router';
 import {Movie} from "../../../../core/models/movie.model";
 import {signal} from "@angular/core";
+import {NoopAnimationsModule} from "@angular/platform-browser/animations";
 
 class MockMovieService {
   movies = signal<Movie[]>([]);
@@ -19,7 +20,7 @@ describe('MovieFormComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [MovieFormComponent],
+      imports: [MovieFormComponent, NoopAnimationsModule],
       providers: [{provide: MovieService, useClass: MockMovieService}, provideRouter([])],
     }).compileComponents();
 

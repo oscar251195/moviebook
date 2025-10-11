@@ -15,6 +15,7 @@ import {MatChip, MatChipSet} from "@angular/material/chips";
 import {MatIcon} from "@angular/material/icon";
 import {ConfirmDialogComponent} from "../../components/movie-form/movie-dialog/confirm-dialog.component";
 import {MatDialog} from "@angular/material/dialog";
+import {ErrorDialogComponent} from "../../../../shared/components/error-dialog/error-dialog.component";
 
 @Component({
   selector: 'app-movie-detail',
@@ -38,9 +39,18 @@ export class MovieDetailComponent implements OnInit {
     const id = this.ruta.snapshot.paramMap.get('id');
     if (!id) return;
     //Acceder a la película mediante su método por ID
-    this.movieService.getMovieById(id).subscribe((data => {
-      this.movie = data;
-    }));
+    this.movieService.getMovieById(id).subscribe({
+      next: data => {
+        if (!data) {
+          // Si getMovieById devuelve undefined (película no encontrada)
+          this.showNotFoundDialogAndRedirect();
+        } else {
+          this.movie = data;
+        }
+      },
+      // El interceptor ya maneja el error, pero por si acaso
+      error: () => this.showNotFoundDialogAndRedirect()
+    });
   }
 
   editMovie(id: string) {
@@ -58,6 +68,22 @@ export class MovieDetailComponent implements OnInit {
         });
       }
     })
+  }
+
+  //Diálogo cuando la película no existe
+  showNotFoundDialogAndRedirect(): void {
+    const dialogRef = this.dialog.open(ErrorDialogComponent, {
+      data: {
+        title: 'Película no encontrada',
+        message: 'La película que buscas no existe. Serás redirigido a la lista principal.'
+      }
+    });
+
+    // Escuchamos a que el diálogo se cierre
+    dialogRef.afterClosed().subscribe(result => {
+      // Si se cerró (result no es undefined), navegamos
+      this.router.navigate(['/movies']);
+    });
   }
 
   goBack(): void {
