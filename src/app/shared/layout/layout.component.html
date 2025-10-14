@@ -1,0 +1,90 @@
+<mat-sidenav-container class="h-screen bg-gray-50 dark:bg-gray-900">
+  <!-- Sidebar -->
+  <mat-sidenav
+    #drawer
+    mode="side"
+    opened
+    class="w-64 bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700"
+  >
+    <!-- Logo / Header -->
+    <div class="flex items-center justify-center h-16 border-b dark:border-gray-700">
+      <h1 class="text-2xl font-bold text-indigo-600">🎬 MovieBook</h1>
+    </div>
+
+    <!-- Navigation links -->
+    <mat-nav-list class="mt-4 space-y-2 p-2">
+      <!-- Movies -->
+      <a
+        mat-list-item
+        routerLink="/movies"
+        routerLinkActive="active-link"
+        class="group dark:hover:bg-indigo-500 dark:hover:text-red-300 transition-colors duration-200"
+      >
+        <div class="flex items-center">
+          <mat-icon class="mr-3 dark:text-black">movie</mat-icon>
+          <span class="text-black group-hover:text-white transition-colors duration-200">Películas</span>
+        </div>
+      </a>
+
+      <!-- Favorites -->
+      <a
+        mat-list-item
+        routerLink="/favorites"
+        routerLinkActive="active-link"
+        class="group hover:bg-indigo-600 dark:hover:bg-indigo-500 transition-colors duration-200"
+      >
+        <div class="flex items-center">
+          <mat-icon class="mr-3 text-yellow-500">star</mat-icon>
+          <span class="text-black group-hover:text-white transition-colors duration-200">Favoritos</span>
+        </div>
+      </a>
+    </mat-nav-list>
+
+    <!-- Logout button -->
+    <div class="absolute bottom-0 w-full p-4 border-t border-gray-200 dark:border-gray-700">
+      <button
+        type="button"
+        class="flex items-center gap-2 px-4 py-2 bg-red-600 text-white rounded-xl shadow hover:bg-black transition"
+        (click)="logout()"
+      >
+        <mat-icon>logout</mat-icon>
+        Logout
+      </button>
+    </div>
+  </mat-sidenav>
+
+  <!-- Main content -->
+  <mat-sidenav-content>
+    <!-- Toolbar -->
+    <mat-toolbar
+      color="primary"
+      class="flex justify-between items-center bg-indigo-600 text-white px-4"
+    >
+      <div class="flex items-center gap-3">
+        <button
+          mat-icon-button
+          class="lg:hidden"
+          (click)="drawer.toggle()"
+          aria-label="Toggle sidebar"
+        >
+          <mat-icon>menu</mat-icon>
+        </button>
+        <span class="font-semibold text-lg">MovieBook: Tu espacio de películas.</span>
+      </div>
+
+      <button
+        mat-icon-button
+        matTooltip="Cerrar sesión"
+        aria-label="Logout"
+        (click)="logout()"
+      >
+        <mat-icon>logout</mat-icon>
+      </button>
+    </mat-toolbar>
+
+    <!-- Routed content -->
+    <div class="p-6">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

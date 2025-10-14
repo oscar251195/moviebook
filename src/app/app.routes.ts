@@ -1,23 +1,27 @@
-import { Routes } from '@angular/router';
-import { MovieListComponent } from './features/movies/pages/movie-list/movie-list.component';
-import { MovieDetailComponent } from './features/movies/pages/movie-detail/movie-detail.component';
-import { MovieFormComponent } from './features/movies/components/movie-form/movie-form.component';
+import {Routes} from '@angular/router';
+import {LoginComponent} from "./features/auth/login/login.component";
+import {authGuard} from "./core/auth/auth.guard";
+import {LayoutComponent} from "./shared/layout/layout.component";
 
 export const routes: Routes = [
-  { path: '', redirectTo: 'movies', pathMatch: 'full' },
 
-  // Listado principal
-  { path: 'movies', component: MovieListComponent },
+  //Ruta para el login (no usa layout y no está protegido)
+  {path: 'login', component: LoginComponent},
 
-  // Crear nueva película
-  { path: 'movies/new', component: MovieFormComponent },
-
-  // Editar película existente
-  { path: 'movies/edit/:id', component: MovieFormComponent },
-
-  // Detalle de película
-  { path: 'movies/:id', component: MovieDetailComponent },
-
+  // Listado principal (se usa layout y están protegidas)
+  {
+    path: '',
+    component: LayoutComponent,
+    canActivate: [authGuard],
+    children: [
+      {
+        path: 'movies',
+        loadChildren: () =>
+          import('./features/movies/movies.routes').then(m => m.MOVIES_ROUTES),
+      },
+      {path: '', redirectTo: 'movies', pathMatch: 'full'},
+    ],
+  },
   // Ruta por defecto
-  { path: '**', redirectTo: 'movies' },
+  {path: '**', redirectTo: 'movies'},
 ];

@@ -16,6 +16,7 @@ import {MatIcon} from "@angular/material/icon";
 import {ConfirmDialogComponent} from "../../components/movie-form/movie-dialog/confirm-dialog.component";
 import {MatDialog} from "@angular/material/dialog";
 import {ErrorDialogComponent} from "../../../../shared/components/error-dialog/error-dialog.component";
+import {NotificationService} from "../../../../core/services/notification.service";
 
 @Component({
   selector: 'app-movie-detail',
@@ -31,6 +32,7 @@ export class MovieDetailComponent implements OnInit {
   private movieService = inject(MovieService);
   private router = inject(Router);
   private dialog = inject(MatDialog);
+  private notify = inject(NotificationService);
 
   movie?: Movie
 
@@ -63,7 +65,11 @@ export class MovieDetailComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
         this.movieService.deleteMovie(id).subscribe({
-          next: () => this.router.navigate(['movies/']),
+
+          next: () => {
+            this.notify.success('Película eliminada correctamente.');
+            this.router.navigate(['movies/'])
+          },
           error: err => console.error('Error eliminando la película: ', err)
         });
       }
