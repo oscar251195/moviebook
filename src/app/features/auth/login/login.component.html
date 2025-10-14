@@ -1,1 +1,74 @@
-<p>login works!</p>
+<div class="flex items-center justify-center min-h-screen bg-gray-100 dark:bg-gray-600">
+  <div
+    class="w-full max-w-md bg-white dark:bg-gray-800 shadow-xl rounded-2xl border border-gray-200 dark:border-gray-700 p-8 space-y-6"
+  >
+    <h2 class="text-3xl font-bold text-center text-gray-900 dark:text-white">
+      🎬 Login <span class="text-indigo-600">MovieBook</span>
+    </h2>
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" class="space-y-5">
+      <!-- Email -->
+      <mat-form-field appearance="fill" class="w-full">
+        <mat-label>Email</mat-label>
+        <input
+          matInput
+          placeholder="admin@moviebook.com"
+          formControlName="email"
+          autocomplete="off"
+          type="email"
+        />
+
+        @if (form.get('email')!.hasError('required')) {
+          <mat-error>El email es obligatorio</mat-error>
+        }
+        @if (form.get('email')!.hasError('email')) {
+          <mat-error>Introduce un email correcto</mat-error>
+        }
+      </mat-form-field>
+
+      <!-- Password -->
+      <mat-form-field appearance="fill" class="w-full">
+        <mat-label>Password</mat-label>
+        <input
+          matInput
+          [type]="hidePassword ? 'password' : 'text'"
+          formControlName="password"
+          placeholder="••••••••"
+          autocomplete="off"
+        />
+
+        <button
+          mat-icon-button
+          matSuffix
+          type="button"
+          (click)="hidePassword = !hidePassword"
+          [attr.aria-label]="'Hide password'"
+          [attr.aria-pressed]="hidePassword"
+        >
+          <mat-icon>{{ hidePassword ? 'visibility_off' : 'visibility' }}</mat-icon>
+        </button>
+
+        @if (form.get('password')!.hasError('required')) {
+          <mat-error>La contraseña es obligatoria</mat-error>
+        }
+      </mat-form-field>
+
+      <!-- Enviar -->
+      <button
+        mat-flat-button
+        class="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-xl shadow hover:bg-green-600 transition w-full"
+        [disabled]="loading || form.invalid"
+      >
+        @if (loading) {
+          <mat-icon class="animate-spin mr-2">autorenew</mat-icon>
+        }
+        {{ loading ? 'Iniciando sesión...' : 'Iniciar sesión' }}
+      </button>
+    </form>
+
+    <p class="text-sm text-center text-gray-500 mt-4">
+      Usa <span class="font-medium text-gray-700 dark:text-gray-300">admin&#64;moviebook.es</span> /
+      <span class="font-medium text-gray-700 dark:text-gray-300">moviebook</span>
+    </p>
+  </div>
+</div>
