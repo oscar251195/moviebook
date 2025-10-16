@@ -35,13 +35,13 @@ describe('AuthService', () => {
   });
 
   it('should return null if no user in localStorage', () => {
-    const user = (service as any).getUserFromStorage();
+    const user = (service as unknown as { getUserFromStorage(): User | null }).getUserFromStorage();
     expect(user).toBeNull();
   });
 
   it('should return a parsed user if user exists in localStorage', () => {
     localStorage.setItem('auth_user', JSON.stringify(VALID_USER));
-    const user = (service as any).getUserFromStorage();
+    const user = (service as unknown as { getUserFromStorage(): User | null }).getUserFromStorage();
     expect(user).toEqual(VALID_USER);
   });
 
