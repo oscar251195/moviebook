@@ -7,7 +7,7 @@ describe('authInterceptor', () => {
   let mockAuthService: jasmine.SpyObj<AuthService>;
 
   //Función auxiliar para ejecutar el interceptor en un contexto de inyección
-  const executeInterceptor = (req: HttpRequest<any>) => {
+  const executeInterceptor = (req: HttpRequest<unknown>) => {
     //Espía con next para comprobar con qué argumentos se llama
     const next = jasmine.createSpy('next').and.callThrough();
 
@@ -51,7 +51,7 @@ describe('authInterceptor', () => {
       expect(nextSpy).toHaveBeenCalled();
 
       //Se captura la petición
-      const clonedRequest = nextSpy.calls.mostRecent().args[0] as HttpRequest<any>;
+      const clonedRequest = nextSpy.calls.mostRecent().args[0] as HttpRequest<unknown>;
 
       //La petición se clona
       expect(clonedRequest).not.toBe(request);
@@ -76,7 +76,7 @@ describe('authInterceptor', () => {
       expect(nextSpy).toHaveBeenCalled();
 
       //Se captura la petición
-      const passedRequest = nextSpy.calls.mostRecent().args[0] as HttpRequest<any>;
+      const passedRequest = nextSpy.calls.mostRecent().args[0] as HttpRequest<unknown>;
 
       //Se comprueba que la petición debe de ser la misma instancia y no se ha clonado
       expect(passedRequest).toBe(request);
